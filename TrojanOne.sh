@@ -118,13 +118,15 @@ sudo systemctl enable trojan && \
 sudo systemctl start trojan && \
 
 
-echo "================================================="
+
 echo "======================end=========================="
-echo "================================================="
 # 打印新的证书路径和私钥路径
 echo "证书路径: $string_cert" && \
 echo "私钥路径: $string_key" && \
 echo "trojan域名: $value_url" && \
 echo "trojan密码: $value_trojan_psw" && \
 sudo systemctl enable certbot-renew.timer && \
-sudo systemctl start certbot-renew.timer
+sudo systemctl start certbot-renew.timer && \
+netstat -lntup|grep 80 && \
+netstat -lntup|grep 443
+echo "======================end=========================="
