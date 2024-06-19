@@ -43,10 +43,11 @@ echo "================================================="
 echo "======================3=========================="
 echo "================================================="
 # 步骤3. 修改nginx nginx/conf/nginx.conf 域名指向
-nginx_conf="/application/nginx/conf/nginx.conf" && \
-#sudo sed -i "s/localhost\s\+\S\+/localhost $value_url;/" "$nginx_conf" && \
+# Nginx配置文件路径
+nginx_conf="/application/nginx/conf/nginx.conf"
 
-sudo sed -n "s/localhost\s\+\S\+/localhost $value_url;/p" "$nginx_conf" && \
+# 使用sed命令替换所有localhost的值
+sudo sed -i "s/localhost/$value_url/g" "$nginx_conf" && \
 cat /application/nginx/conf/nginx.conf  && \
 echo "================================================="
 echo "======================4=========================="
