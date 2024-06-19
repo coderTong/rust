@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 提示用户输入参数
+# 提示用户输入参数 域名和trojan的密码
 read -p "Please input URL:" value_url
 read -p "Please input password:" value_trojan_psw
 
@@ -16,7 +16,10 @@ certbot_command="certbot --nginx --register-unsafely-without-email --agree-tos -
 # 拼接命令
 full_command="$certbot_command $value_url"
 
-
+# 确保防火墙允许 HTTP 和 HTTPS 流量
+sudo firewall-cmd --add-service=http --permanent && \
+sudo firewall-cmd --add-service=https --permanent && \
+sudo firewall-cmd --reload && \
 
 echo "================================================="
 echo "======================1=========================="
