@@ -10,10 +10,9 @@ string_key="/etc/letsencrypt/live/$value_url/privkey.pem"
 
 
 # 步骤1. 安装必备软件
-sudo yum install screen -y
-screen -R 666
-sudo yum install jq aria2 vim wget pcre pcre-devel openssl openssl-devel gcc epel-release certbot python2-certbot-nginx -y
-sudo yum update -y
+sudo yum install jq git aria2 vim wget pcre pcre-devel openssl openssl-devel gcc -y
+sudo yum install epel-release -y && sudo yum update -y && sudo yum install certbot python2-certbot-nginx -y
+
 
 # 步骤2. 源码安装nginx
 wget -q http://nginx.org/download/nginx-1.20.0.tar.gz
