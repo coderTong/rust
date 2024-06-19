@@ -58,8 +58,9 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-q
 # 修改配置文件
 trojan_config="/usr/local/etc/trojan/config.json"
 jq --arg password "$value_trojan_psw" --arg cert "$string_cert" --arg key "$string_key" \
-   '.password = [$password] | .cert = $cert | .key = $key' \
+   '.password = [$password] | .ssl.cert = $cert | .ssl.key = $key' \
    "$trojan_config" > "/tmp/config.json" && sudo mv /tmp/config.json "$trojan_config"
+
 
 # 步骤10 启用并启动 Trojan
 sudo systemctl enable trojan
