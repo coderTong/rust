@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 提示用户输入参数
-read -p "请输入域名: " value_url
-read -p "请输入Trojan连接密码: " value_trojan_psw
+read -p "Please input URL:" value_url
+read -p "Please input password:" value_trojan_psw
 
 # 声明字符串
 string_cert="/etc/letsencrypt/live/$value_url/fullchain.pem"
