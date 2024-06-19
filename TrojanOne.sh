@@ -25,7 +25,7 @@ echo "================================================="
 echo "======================1=========================="
 echo "================================================="
 # 步骤1. 安装必备软件
-sudo yum install epel-release -y && sudo yum install jq -y && \
+sudo yum install epel-release -y && sudo yum install jq net-tools -y && \
 sudo yum install git aria2 vim wget pcre pcre-devel openssl openssl-devel gcc -y && \
 sudo yum install epel-release -y && sudo yum update -y && sudo yum install certbot python2-certbot-nginx -y  && \
 
