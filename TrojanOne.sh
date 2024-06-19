@@ -33,7 +33,7 @@ sudo sed -i "s/localhost\s\+\S\+/localhost $value_url;/" "$nginx_conf"
 sudo /application/nginx/sbin/nginx
 
 # 步骤5. 安装https证书
-certbot --nginx -m xxx996777@example.com --no-eff-email --agree-tos --nginx-server-root=/application/nginx/conf -d $value_url
+certbot --nginx --register-unsafely-without-email --agree-tos --nginx-server-root=/application/nginx/conf -d $value_url
 certbot certificates
 sudo systemctl enable certbot-renew.timer
 sudo systemctl start certbot-renew.timer
