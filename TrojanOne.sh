@@ -59,8 +59,14 @@ echo "================================================="
 # 步骤5. 安装https证书
 # certbot --nginx --register-unsafely-without-email --agree-tos --nginx-server-root=/application/nginx/conf -d $value_url && \
 # 执行Certbot命令
+cat /application/nginx/conf/nginx.conf && \
+echo " $full_command " && \
 eval $full_command && \
 
+
+echo "================================================="
+echo "======================end========================"
+echo "================================================="
 
 
 echo "================================================="
